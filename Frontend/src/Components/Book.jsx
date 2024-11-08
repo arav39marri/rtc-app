@@ -1,18 +1,50 @@
-import React from "react"
-import { useState } from "react"
-export default function Book() {
+  import React from "react"
+  import { useState } from "react"
+  import axios from 'axios';
+  import { useNavigate } from "react-router-dom";
+
+  export default function Book() {
   const [Firstname , setFirstName] = useState("");
   const [Secondname , setSecondName] = useState("");
-  const [departure , setdeparture] = useState("");
-  const [destination , setDestination] = useState("");
-  const [pass, setPass] = useState("");
-  const [data, setdate] = useState("");
-  const [time , setTime] = useState("");
+  const [departur , setdeparture] = useState("");
+  const [destinatin , setDestination] = useState("");
+  const [passenger, setPass] = useState("");
+  const [dat, setdate] = useState("");
+  const [tim , setTime] = useState("");
+  const navigate = useNavigate();
+
+  const submit = async (e)=>{
+    e.preventDefault();
+
+    try{
+      axios.put("http://localhost:2000/createticket", {
+        name: Firstname,
+        destination: destinatin,
+        departure: departur,
+        passengers: passenger,
+        date:dat,
+        time: tim
+    })
+    .then(response => {
+      navigate('/History')
+        console.log("Ticket booked successfully:", response.data);
+    })
+    .catch(error => {
+        console.error("Error booking ticket:", error);
+    });
+    }
+    catch(error){
+    
+    }
+
+  }
   
+
+
   return (
     <div class="flex items-center justify-center p-12">
     <div class="mx-auto w-full max-w-[550px]">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <form onSubmit={submit}  method="POST">
       <div class="-mx-3 flex flex-wrap">
           <div class="w-full px-3 sm:w-1/2">
             <div class="mb-5">
@@ -121,6 +153,7 @@ export default function Book() {
                 type="date"
                 name="date"
                 id="date"
+                onChange={(e)=> setdate(e.target.value)}
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -137,6 +170,7 @@ export default function Book() {
                 type="time"
                 name="time"
                 id="time"
+                onChange={(e)=>setTime(e.target.value)}
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -181,7 +215,7 @@ export default function Book() {
           */}
   
         <div>
-          <button
+          <button  type="submit"
             class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
            
           >

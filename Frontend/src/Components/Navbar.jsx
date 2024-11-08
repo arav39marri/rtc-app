@@ -1,13 +1,13 @@
 import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Home', href: '/Home', current: true },
-  { name: 'Booking', href: '/Book', current: true },
+  { name: 'Home', href: '/Home', current: false },
+  { name: 'Booking', href: '/Book', current: false },
   { name: 'History', href: '/History', current: false },
   { name: 'Notification', href: '/Notification', current: false },
-  
 ]
 
 function classNames(...classes) {
@@ -34,23 +34,30 @@ const Navbar = () => {
                  alt="TSRTC Logo"
               className="h-12 w-auto"
             />
-            <p className='ml-2 text-slate-50 font-semibold '>TSRTC</p>
+            <p className='ml-2 text-slate-50 text-xl font-semibold '>TSRTC</p>
           </div>
           <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-4">
-              {navigation.map((item) => (
+             <ul className='flex gap-3 md:gap-8'>
+                
+              <Link to="/"  > <li className='text-white text-xl p-2 font-semibold' >Home</li>  </Link>
+              <Link to="/Book" > <li className='text-white text-xl p-2 font-semibold' >Booking</li></Link>
+              <Link to="/History"  > <li className='text-white text-xl p-2 font-semibold' >History</li></Link>
+              <Link to="/Notification"  > <li className='text-white text-xl pt-2 font-semibold' >Notification</li></Link>
+             </ul>
+              {/* { navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'rounded-md px-3 py-2 text-sm font-medium',
+                    'rounded-md px-3 py-2 text-lg font-medium',
                   )}
                 >
                   {item.name}
                 </a>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
@@ -104,7 +111,14 @@ const Navbar = () => {
 
     <DisclosurePanel className="sm:hidden">
       <div className="space-y-1 px-2 pb-3 pt-2">
-        {navigation.map((item) => (
+      <ul className=' gap-3 md:gap-8 flex-col'>
+        <Link to="/"   ><li className='ml-10 text-white text-xl p-2 font-semibold' >Home</li></Link>
+        <Link to="/Book" ><li className='ml-10 text-white text-xl p-2 font-semibold' >Booking</li></Link>  
+        <Link to="/History"  > <li className='ml-10 text-white text-xl p-2 font-semibold' >History</li></Link>  
+        <Link to="/Notification" ><li className=' ml-10 text-white text-xl p-2 font-semibold' >Notification</li></Link>  
+
+             </ul>
+        {/* {navigation.map((item) => (
           <DisclosureButton
             key={item.name}
             as="a"
@@ -117,7 +131,7 @@ const Navbar = () => {
           >
             {item.name}
           </DisclosureButton>
-        ))}
+        ))} */}
       </div>
     </DisclosurePanel>
   </Disclosure>
