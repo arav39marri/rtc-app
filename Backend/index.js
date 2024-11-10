@@ -66,20 +66,12 @@ app.post('/create', async (req, res) => {
 
 app.get('/history', async (req, res) => {
     try {
-        // Fetch the user document
         const user = await model.findOne({ name: "aravind" });
-        
-        // Check if the user exists
         if (!user) {
             return res.status(404).send({ message: "User not found" });
         }
 
-        // Access the tickets array from the user document
         const tickets = user.tickets;
-        // console.log(typeof tickets); // Should log 'object' (Array)
-        // console.log(tickets); // Log tickets array to verify content
-
-        // Send the tickets array in response
         res.send(tickets);
     } catch (error) {
         console.error("Error fetching tickets:", error);
@@ -88,20 +80,11 @@ app.get('/history', async (req, res) => {
 });
 app.get('/notification', async (req, res) => {
     try {
-        // Fetch the user document
         const user = await model.findOne({ name: "aravind" });
-        
-        // Check if the user exists
         if (!user) {
             return res.status(404).send({ message: "User not found" });
         }
-
-        // Access the tickets array from the user document
         const noti = user.notifications;
-        // console.log(typeof tickets); // Should log 'object' (Array)
-        // console.log(tickets); // Log tickets array to verify content
-
-        // Send the tickets array in response
         res.send(noti);
     } catch (error) {
         console.error("Error fetching notification:", error);

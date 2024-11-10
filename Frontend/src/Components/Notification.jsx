@@ -20,8 +20,11 @@ const Notification = () => {
     <div className='flex-row gap-6   '>
      
     {data.map((element, index) => (
-     <div className='flex gap-5  p-5 '>
-       <p className='text-lg' >{element.message}</p>
+     <div className='flex gap-5  p-5 items-center justify-center '>
+      <div className='bg-slate-100 p-10'  >
+      <p className='text-lg' >{element.message}</p>
+      </div>
+      
      </div>
 ))}
      

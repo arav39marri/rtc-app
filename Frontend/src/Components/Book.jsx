@@ -30,6 +30,7 @@
         console.log("Ticket booked successfully:", response.data);
     })
     .catch(error => {
+      alert("user not found please register or check your your name ")
         console.error("Error booking ticket:", error);
     });
     }
