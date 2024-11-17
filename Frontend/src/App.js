@@ -7,19 +7,22 @@ import History from './Components/History';
 import Notification from './Components/Notification';
 import Footer from './Components/Footer';
 import Createuser from './Components/Createuser';
+import Signup from './Components/Signup';
+
 function App() {
   return (
     <div>
-      <Navbar/>
+      
       <Routes>
         
-         <Route path="/" element={<Home />} />
+         <Route path="/" element={<Signup/>} />
+         <Route path="/Home" element={<Home/>}/>
         <Route path="/Book" element={<Book />} />
         <Route path="/History" element={<History />} />
         <Route path="/Notification" element={<Notification />} />
         <Route path="/Createuser" element={<Createuser />}   ></Route>
       </Routes>
-      <Footer/>
+     
     </div>
   );
 }

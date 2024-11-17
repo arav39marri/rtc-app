@@ -1,46 +1,64 @@
-import React from 'react'
-import { useState } from "react"
-import axios from 'axios';
-import { useNavigate } from "react-router-dom";
-const Createuser = () => {
-    const [name , setFirstName] = useState("aravind");
-  const [Secondname , setSecondName] = useState("bnhgfd");
-  const [departure , setdeparture] = useState("fggffb");
-  const [destination , setDestination] = useState("sfdgfn");
-  const [phno , setphn] = useState(12345678);
-  const [email , setEmail] = useState("abcd@gmail.com");
-  const [password , setpassword] = useState("123456");
-  const [passengers, setPass] = useState(2);
-  const [date, setdate] = useState("df");
-  const [time , setTime] = useState("dfgf");
-  const navigate = useNavigate();
+import React from "react";
 
-  const submit = async (e)=>{
-    e.preventDefault();
-
-    try{
-      axios.post("http://localhost:2000/create",{
-        name , phno, email ,password
-      }).then(
-        alert("user created successfully")
-        
-      )
-      .then(
-        navigate("/History")
-      )
-    }
-    catch(error){
-    
-    }
-
-}
+const Ticket = ({ name, bookedAt, departure, destination, passengers, date, time }) => {
   return (
-    <div>
-      <button onClick={submit}  className='bg-red-300' >
-          clivkkfhg
-      </button>
-    </div>
-  )
-}
+    <div className="flex items-center justify-center min-w- md:text-lg text-sm overflow-hidden ">
+      <div className="bg-slate-300 border-2 border-black rounded-lg md:p-3 p-2 shadow-lg">
+        <div className="flex justify-between items-center m-2">
+          <h1 className="md:text-2xl sm:text-sm font-bold text-black">BUS TICKET</h1>
+          <div className="flex space-x-2">
+            <span className="w-5 h-5 bg-black rounded-full"></span>
+            <span className="w-5 h-5 bg-black rounded-full"></span>
+          </div>
+        </div>
 
-export default Createuser
+        <div className="flex justify-between">
+          {/* Left Section */}
+          <div className="w-3/5">
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              DEPARTURE: <span className="font-normal">{departure}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              DESTINATION: <span className="font-normal">{destination}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              PASSENGERS: <span className="font-normal">{passengers}</span>
+            </p>
+            <div className="mt-8">
+              <img
+                src="image.png"
+                alt="Barcode"
+                className="w-32"
+              />
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="w-2/5 border-l-2 border-black pl-4">
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              NAME: <span className="font-normal">{name}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              DATE: <span className="font-normal">{date}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              TIME: <span className="font-normal">{time}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              BOOKED AT: <span className="font-normal">{bookedAt}</span>
+            </p>
+            <div className="mt-8">
+              <img
+                src="barcode.png"
+                alt="Barcode"
+                className="w-32"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Ticket;

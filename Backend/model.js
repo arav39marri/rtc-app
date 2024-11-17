@@ -9,8 +9,8 @@ mongoose.connect('mongodb+srv://aravindmarripelli:D8EvFbZFRtxfRa67@cluster0.elde
 })
 const usermodel = new mongoose.Schema({
     name: { type: String, required: true },
-    phno: { type: Number, required: true },
-    email: { type: String, required: true, unique: true }, 
+    // phno: { type: Number, required: true },
+    email: { type: String, required: true }, 
     password: { type: String, required: true },
     tickets: { type: Array, default: [] }, 
     notifications: { type: Array, default: [] }

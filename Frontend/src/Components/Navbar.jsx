@@ -1,19 +1,17 @@
 import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
-
-const navigation = [
-  { name: 'Home', href: '/Home', current: false },
-  { name: 'Booking', href: '/Book', current: false },
-  { name: 'History', href: '/History', current: false },
-  { name: 'Notification', href: '/Notification', current: false },
-]
+import { Link, useNavigate } from 'react-router-dom'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 const Navbar = () => {
+  const navigate = useNavigate() ;
+  const handleSignout = ()=>{
+     localStorage.clear() ;
+     navigate('/');
+  }
   return (
     <Disclosure as="nav" className="bg-gray-800">
     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -40,7 +38,7 @@ const Navbar = () => {
             <div className="flex space-x-4">
              <ul className='flex gap-3 md:gap-8'>
                 
-              <Link to="/"  > <li className='text-white text-xl p-2 font-semibold' >Home</li>  </Link>
+              <Link to="/Home"  > <li className='text-white text-xl p-2 font-semibold' >Home</li>  </Link>
               <Link to="/Book" > <li className='text-white text-xl p-2 font-semibold' >Booking</li></Link>
               <Link to="/History"  > <li className='text-white text-xl p-2 font-semibold' >History</li></Link>
               <Link to="/Notification"  > <li className='text-white text-xl pt-2 font-semibold' >Notification</li></Link>
@@ -99,9 +97,9 @@ const Navbar = () => {
                 </a>
               </MenuItem>
               <MenuItem>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                <div  onClick={handleSignout} className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                   Sign out
-                </a>
+                </div>
               </MenuItem>
             </MenuItems>
           </Menu>

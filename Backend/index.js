@@ -12,11 +12,35 @@ app.get('/' , (req,res)=>{
     res.send("hello ");
 })
 
+
+app.post('/search', async (req, res) => {
+    const { email, password } = req.body;
+    // console.log(email, password);
+
+    try {
+        const user = await model.findOne({ email: email });
+
+        if (!user) {
+            return res.status(404).send("User not found"); 
+        }
+
+        if (user.password !== password) {
+            return res.status(401).send("Incorrect username or password"); 
+        }
+
+        res.status(200).send("Sign-in successful");
+    } catch (error) {
+        console.error("Error during sign-in:", error);
+        res.status(500).send("Internal server error");
+    }
+});
+
 app.put('/createticket', async (req, res) => {
     const { name, destination, departure, passengers, date, time } = req.body;
 
+
     try {
-        const user = await model.findOne({ name: name });
+        const user = await model.findOne({ email: name });
         if (!user) {
             return res.status(404).send({ message: "User not found." });
         }
@@ -64,9 +88,11 @@ app.post('/create', async (req, res) => {
     }
 });
 
-app.get('/history', async (req, res) => {
+app.post('/history', async (req, res) => {
+    const {useremail} = req.body ;
+    console.log(useremail);
     try {
-        const user = await model.findOne({ name: "aravind" });
+        const user = await model.findOne({ email: useremail });
         if (!user) {
             return res.status(404).send({ message: "User not found" });
         }
@@ -78,9 +104,10 @@ app.get('/history', async (req, res) => {
         res.status(500).send({ message: "Error fetching tickets", error: error.message });
     }
 });
-app.get('/notification', async (req, res) => {
+app.post('/notification', async (req, res) => {
+    const {useremail} = req.body;
     try {
-        const user = await model.findOne({ name: "aravind" });
+        const user = await model.findOne({ email: useremail });
         if (!user) {
             return res.status(404).send({ message: "User not found" });
         }

@@ -1,8 +1,26 @@
 import React from 'react'
-import Createuser from './Createuser'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import { useNavigate } from "react-router-dom";
+
+
 const Home = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+     console.log(parsedUser);
+     console.log(localStorage);
+    if (!parsedUser) {
+        navigate('/'); 
+    }
+}, [navigate]);
   return (
+    <div>
+      <Navbar/>
+    
    <div className="mt-16 mb-9">
   <section className="bg-white dark:bg-gray-900">
     <div className="grid max-w-screen-xl px-2 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -10,7 +28,7 @@ const Home = () => {
       <div className="lg:col-span-5 lg:flex lg:order-1 order-2">
         <img
           src="rtcf.jpg"
-          alt="hero image"
+          alt="heroimage"
           className="rounded-xl h-auto w-full  object-cover lg:p-10 sm:p-20 p-10 "
         />
       </div>
@@ -23,7 +41,7 @@ const Home = () => {
           Join thousands of travelers who trust us to get them to their destinations comfortably and on time. Whether you're traveling for work, leisure, or exploring new places, we provide reliable bus services with easy online booking and customer support every step of the way.
         </p>
         <Link
-          to='/Createuser'
+          to='/Book'
           className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
         >
           Get started
@@ -40,18 +58,19 @@ const Home = () => {
             ></path>
           </svg>
         </Link>
-        <a
-          href="#"
+        <div
+          
           className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
         >
           Speak to Sales
-        </a>
+        </div>
       </div>
 
     </div>
   </section>
 </div>
-
+ <Footer/>
+</div>
   )
 }
 

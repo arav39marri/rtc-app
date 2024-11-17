@@ -2,8 +2,12 @@
   import { useState } from "react"
   import axios from 'axios';
   import { useNavigate } from "react-router-dom";
+  import Navbar from "./Navbar";
+  import Footer from "./Footer";
+
 
   export default function Book() {
+  
   const [Firstname , setFirstName] = useState("");
   const [Secondname , setSecondName] = useState("");
   const [departur , setdeparture] = useState("");
@@ -15,19 +19,27 @@
 
   const submit = async (e)=>{
     e.preventDefault();
+    const username = JSON.parse(localStorage.getItem('user'));
+     const dateCurent = new Date();
+    
+      const currentDate = new Date();
+      const dt = `${String(currentDate.getDate()).padStart(2, '0')}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${currentDate.getFullYear()}`;
+      const tme = `${String(currentDate.getHours()).padStart(2, '0')}:${String(currentDate.getMinutes()).padStart(2, '0')}:${String(currentDate.getSeconds()).padStart(2, '0')}`;
+      console.log(dt) ;
+      console.log(tme);
 
     try{
       axios.put("http://localhost:2000/createticket", {
-        name: Firstname,
+        name: username,
         destination: destinatin,
         departure: departur,
         passengers: passenger,
-        date:dat,
-        time: tim
+        date:dt,
+        time: tme
     })
     .then(response => {
       navigate('/History')
-        console.log("Ticket booked successfully:", response.data);
+        // console.log("Ticket booked successfully:", response.data);
     })
     .catch(error => {
       alert("user not found please register or check your your name ")
@@ -43,8 +55,11 @@
 
 
   return (
+    <div  className="h-screen">
+      <Navbar/>
+   
     <div class="flex items-center justify-center p-12">
-    <div class="mx-auto w-full max-w-[550px]">
+         <div class="mx-auto w-full max-w-[550px]">
       <form onSubmit={submit}  method="POST">
       <div class="-mx-3 flex flex-wrap">
           <div class="w-full px-3 sm:w-1/2">
@@ -62,11 +77,13 @@
                 placeholder="First Name"
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               
             </div>
           </div>
           <div class="w-full px-3 sm:w-1/2">
+          
             <div class="mb-5">
               <label
                 for="lName"
@@ -76,6 +93,7 @@
               </label>
               <input
               onChange={(e) => setSecondName(e.target.value)}
+              required
                 type="text"
                 name="lName"
                 id="lName"
@@ -100,6 +118,7 @@
                 name="fName"
                 id="fName"
                 placeholder="Enter departure Location"
+                required 
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -118,6 +137,7 @@
                 name="lName"
                 id="lName"
                 placeholder="Enter destination Location"
+                required 
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -132,6 +152,7 @@
           </label>
           <input
           onChange={(e) => setPass(e.target.value)}
+          required
             type="number"
             name="guest"
             id="guest"
@@ -142,7 +163,7 @@
         </div>
   
         <div class="-mx-3 flex flex-wrap">
-          <div class="w-full px-3 sm:w-1/2">
+          {/* <div class="w-full px-3 sm:w-1/2">
             <div class="mb-5">
               <label
                 for="date"
@@ -150,16 +171,18 @@
               >
                 Date
               </label>
+              {dat}
               <input
                 type="date"
                 name="date"
                 id="date"
                 onChange={(e)=> setdate(e.target.value)}
+
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-          </div>
-          <div class="w-full px-3 sm:w-1/2">
+          </div> */}
+          {/* <div class="w-full px-3 sm:w-1/2">
             <div class="mb-5">
               <label
                 for="time"
@@ -175,45 +198,8 @@
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-          </div>
+          </div> */}
         </div>
-  
-       {/*   <div class="mb-5">
-          <label class="mb-3 block text-base font-medium text-[#07074D]">
-            Are you coming to the event?
-          </label>
-         <div class="flex items-center space-x-6"> 
-            <div class="flex items-center">
-              <input
-                type="radio"
-                name="radio1"
-                id="radioButton1"
-                class="h-5 w-5"
-              />
-              <label
-                for="radioButton1"
-                class="pl-3 text-base font-medium text-[#07074D]"
-              >
-                Yes
-              </label>
-            </div>
-            <div class="flex items-center">
-              <input
-                type="radio"
-                name="radio1"
-                id="radioButton2"
-                class="h-5 w-5"
-              />
-              <label
-                for="radioButton2"
-                class="pl-3 text-base font-medium text-[#07074D]"
-              >
-                No
-              </label>
-            </div>
-          </div>
-        </div>
-          */}
   
         <div>
           <button  type="submit"
@@ -225,6 +211,8 @@
         </div>
       </form>
     </div>
+  </div>
+  <Footer/>
   </div>
   )
 }
