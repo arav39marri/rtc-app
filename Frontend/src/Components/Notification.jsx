@@ -9,7 +9,7 @@ const Notification = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  const backendUrl = process.env.REACT_APP_API_URL;
+  const backendUrl = 'https://rtc-app-bayg.onrender.com';
   
   useEffect(() => {
     console.log('Backend URL:', backendUrl);

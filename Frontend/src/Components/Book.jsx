@@ -16,7 +16,7 @@ export default function Book() {
   const [filteredDepartures, setFilteredDepartures] = useState([]);
   const [filteredDestinations, setFilteredDestinations] = useState([]);
   const navigate = useNavigate();
-  const backendUrl = process.env.REACT_APP_API_URL;
+  const backendUrl = 'https://rtc-app-bayg.onrender.com';
   const [in1,setin1] = useState(true) ;
   const [in2,setin2] = useState(true) ;
 

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-    const backendUrl = process.env.REACT_APP_API_URL;
+    const backendUrl = 'https://rtc-app-bayg.onrender.com';
     const [name , setName] = useState("");
     const [email , setEmail] = useState("");
     const [password , setpassword] = useState(null);
