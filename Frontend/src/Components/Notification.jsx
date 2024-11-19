@@ -9,7 +9,7 @@ const Notification = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  const backendUrl = process.env.REACT_APP_URL;
+  const backendUrl = process.env.REACT_APP_API_URL;
   
   useEffect(() => {
     const storedUser = localStorage.getItem('user');

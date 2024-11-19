@@ -7,7 +7,7 @@ import Ticket from './Createuser';
 
 const History = () => {
 
-  const backendUrl = process.env.REACT_APP_URL;
+  const backendUrl = process.env.REACT_APP_API_URL;
 
   const [data, setData] = useState([]);
   const [selectedTicket, setSelectedTicket] = useState(null); // State for selected ticket details
