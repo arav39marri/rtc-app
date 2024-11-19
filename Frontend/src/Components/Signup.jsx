@@ -13,7 +13,10 @@ const Signup = () => {
     const [message , setMessage] = useState("");
     useEffect(() => {
         // localStorage.clear();
-        const user = localStorage.getItem('user');
+        console.log('Backend URL:', backendUrl);
+
+
+        const user = localStorage.getItem('user');  
         console.log();
         try {
           const parsedUser = user ? JSON.parse(user) : null;
@@ -29,8 +32,8 @@ const Signup = () => {
         e.preventDefault(); 
     
         try {
-            console.log(`${backendUrl}`+'/search')
-            const response = await axios.post(`${backendUrl}`+'/search', { email, password });
+            // console.log(`${backendUrl}`+'/search')
+            const response = await axios.post(`${backendUrl}/search`, { email, password });
              console.log(response) ;
             if (response.status === 200) {
                 setMessage(response.data); 

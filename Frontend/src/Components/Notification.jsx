@@ -12,6 +12,7 @@ const Notification = () => {
   const backendUrl = process.env.REACT_APP_API_URL;
   
   useEffect(() => {
+    console.log('Backend URL:', backendUrl);
     const storedUser = localStorage.getItem('user');
     const parsedUser = storedUser ? JSON.parse(storedUser) : null;
      console.log(parsedUser);
@@ -23,7 +24,7 @@ const Notification = () => {
 
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('user'));
-      axios.post(`${backendUrl}`+'/notification',{
+      axios.post(`${backendUrl}/notification`,{
         useremail
       })
           .then((res) => {

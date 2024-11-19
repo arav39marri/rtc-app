@@ -28,6 +28,7 @@ export default function Book() {
 
   useEffect(() => {
     // Filter departure locations based on user input
+    console.log('Backend URL:', backendUrl);
     setin1(true);
     setin2(true);
     if (departur) {

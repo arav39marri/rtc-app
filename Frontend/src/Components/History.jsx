@@ -25,7 +25,8 @@ const History = () => {
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('user'));
     // console.log(useremail) ;
-    axios.post(`${backendUrl}`+'/history',{
+    console.log('Backend URL:', backendUrl);
+    axios.post(`${backendUrl}/history`,{
       useremail
     })
       .then((res) => {
