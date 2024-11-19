@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-
+    const backendUrl = process.env.REACT_APP_URL;
     const [name , setName] = useState("");
     const [email , setEmail] = useState("");
     const [password , setpassword] = useState(null);
@@ -14,6 +14,7 @@ const Signup = () => {
     useEffect(() => {
         // localStorage.clear();
         const user = localStorage.getItem('user');
+        console.log();
         try {
           const parsedUser = user ? JSON.parse(user) : null;
           if (parsedUser) {
@@ -28,7 +29,8 @@ const Signup = () => {
         e.preventDefault(); 
     
         try {
-            const response = await axios.post('http://localhost:2000/search', { email, password });
+            console.log(`${backendUrl}`+'/search')
+            const response = await axios.post(`${backendUrl}`+'/search', { email, password });
              console.log(response) ;
             if (response.status === 200) {
                 setMessage(response.data); 

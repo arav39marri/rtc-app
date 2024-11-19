@@ -1,0 +1,270 @@
+[
+    {
+        "start": "MDCL",
+        "stops": "Bowenpally, RTC X Rds, Koti"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "KOTI,RTC X RDS,BOIGUDA"
+    },
+    {
+        "start": "Dilsukhnagar",
+        "stops": "koti,RTC x Rds,MSRD"
+    },
+    {
+        "start": "FMBS",
+        "stops": "SHALIBANDA,AFZALGUNJ,CLK X RDS,TUKARAMGATE"
+    },
+    {
+        "start": "Dilsukhnagar",
+        "stops": "DSNR,Koti,RTC x Rds,MSRD"
+    },
+    {
+        "start": "IBS",
+        "stops": "KOTI,RTC X RDS,BOIGUDA"
+    },
+    {
+        "start": "JIYAGUDA",
+        "stops": "AFZALGUNJ,KACHIGUDA,RTC X ROADS"
+    },
+    {
+        "start": "KOTI",
+        "stops": "NARAYANGUDA,RTC X RDS,BOIGUDA"
+    },
+    {
+        "start": "NMNGR",
+        "stops": "DSNR,Koti,RTC x Rds,MSRD"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "KOTI,RTC X RDS,PADMARAONAGAR"
+    },
+    {
+        "start": "KOTI",
+        "stops": "RTC X RDS,PADMARAONAGAR, KARKHANA"
+    },
+    {
+        "start": "NGO'S Colony",
+        "stops": "DSNR W.COLLEGE, RTC X RD"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "NARAYANGUDA,RTC X RDS,BOIGUDA"
+    },
+    {
+        "start": "BARKAS",
+        "stops": "CBS,Shankarmutte,RTC\"X\" Rds"
+    },
+    {
+        "start": "JIYAGUDA",
+        "stops": "AFZALGUNJ,KACHIGUDA,RTC X ROADS"
+    },
+    {
+        "start": "UPPUGUDA",
+        "stops": "CBS,Shankarmutte,RTC\"X\" Rds"
+    },
+    {
+        "start": "Madhubancolony",
+        "stops": "Katedhan,Zoo Park,Afzalgunj,RTC x Rds."
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "Koti,Nallakunta,OU,TNK,Nacharram"
+    },
+    {
+        "start": "KOTI",
+        "stops": "TARNAKA,HABSIGUDA,NACHARAM"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "SHANKARMUTT,OUC,TARNAKA"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "CBS, Kachiguda,Tarnaka,Lalapet,Moulali"
+    },
+    {
+        "start": "DAMMAIGUDA",
+        "stops": "ECIL, TARNAKA, KOTI"
+    },
+    {
+        "start": "ECIL'X'RD",
+        "stops": "HBC, TARNAKA, KOTI"
+    },
+    {
+        "start": "KEESARAGUTTA",
+        "stops": "KEESARA,ECIL,TARNAKA,KOTI"
+    },
+    {
+        "start": "ECIL'X'RD",
+        "stops": "HBC, NACHARAM, TARNAKA"
+    },
+    {
+        "start": "AMBEDKAR NAGAR",
+        "stops": "ECIL, HBC, KOTI"
+    },
+    {
+        "start": "KUSHAIGUDA",
+        "stops": "MOULALI,TARNAKA,KOTI"
+    },
+    {
+        "start": "KLR NAGAR",
+        "stops": "MALLAPUR,NACHARAM,TARNAKA"
+    },
+    {
+        "start": "AS RAO NAGAR",
+        "stops": "RTC COLY,LALAPET,TARNAKA"
+    },
+    {
+        "start": "AFZALGUNJ",
+        "stops": "TARNAKA,HABSIGUDA,NACHARAM"
+    },
+    {
+        "start": "YAPRAL",
+        "stops": "ECIL,HBC,TARNAKA"
+    },
+    {
+        "start": "KOTI",
+        "stops": "NALLAKUNTA,TILAKNAGAR,VIDYANAGAR"
+    },
+    {
+        "start": "VAMPUGUDA",
+        "stops": "ECIL,HBC,TARNAKA"
+    },
+    {
+        "start": "KUSHAIGUDA",
+        "stops": "ECIL,TARNAKA,KCG,C.GHAT"
+    },
+    {
+        "start": "SEC'BAD STN",
+        "stops": "Paradise,RNG,Sectt,Masabtank"
+    },
+    {
+        "start": "MDCL",
+        "stops": "Bowenpally, RNG"
+    },
+    {
+        "start": "BAPU GHAT",
+        "stops": "BAPUGHAT,L HOUSE,MP,M TANK,L POOL, SEC'BAD"
+    },
+    {
+        "start": "TOLI CHOWKI",
+        "stops": "TOLICHOWKI,M TANK, PARADISE,SEC'BAD"
+    },
+    {
+        "start": "GOLKONDA",
+        "stops": "GOLKONDA,L HOUSE,MP,M TANK,L POOL, SEC'BAD"
+    },
+    {
+        "start": "GPRA QUARTERS",
+        "stops": "Gachibowli,MP,L.Pool,BATA"
+    },
+    {
+        "start": "SEC'BAD",
+        "stops": "Bata,Masabtank,SD Hospital"
+    },
+    {
+        "start": "SEC'BAD STN",
+        "stops": "Bata,L.Poo,MP,Langer House"
+    },
+    {
+        "start": "KALIMANDIR",
+        "stops": "KALIMANDIR,L HOUSE,MP,M TANK, SEC'BAD"
+    },
+    {
+        "start": "MEHIDIPATNAM",
+        "stops": "MEHDIPATNAM,B HILLS,BGPT,SEC'BAD,TNK,MALLAPUR"
+    },
+    {
+        "start": "SEC'BAD",
+        "stops": "Bata,Masabtank,Mallepally"
+    },
+    {
+        "start": "MOTHIDARWAJA",
+        "stops": "DILAWARSHAH,MDLINES,M TANK, PARADISE,SEC'BAD"
+    },
+    {
+        "start": "PUPPAL GUDA",
+        "stops": "PUPAL GUDA,MP,M TANK, SEC'BAD"
+    },
+    {
+        "start": "RISALA BAZAR",
+        "stops": "LALBAZAR, BATA, M.TANK"
+    },
+    {
+        "start": "TALLAGADDA",
+        "stops": "TALLAGADDA ,MP,M TANK, L POOL,SEC'BAD"
+    },
+    {
+        "start": "RISALA BAZAR",
+        "stops": "Lalbazar,Bata,Sectt.,MP"
+    },
+    {
+        "start": "MEHIDIPATNAM",
+        "stops": "MP,M TANK, PARADISE,SEC'BAD"
+    },
+    {
+        "start": "GP COLONY",
+        "stops": "MSRD,RTC X Road,B.L.Pally,N.Guda,L.Pool"
+    },
+    {
+        "start": "ECIL'X'RD",
+        "stops": "HBC,TARNAKA,H.NAGAR"
+    },
+    {
+        "start": "RAMNAGAR",
+        "stops": "B.L.pally,N.Guda,Liberty,L.Pool,Masabtank"
+    },
+    {
+        "start": "VST",
+        "stops": "VST,Nallakunta,N.Guda,L.Pool,MP,Nanalnagr"
+    },
+    {
+        "start": "MDCL",
+        "stops": "Bowenpally, MT Bund, Koti"
+    },
+    {
+        "start": "SEC'BAD STN",
+        "stops": "Paradise,RNG,Liberty,Koti,AFG"
+    },
+    {
+        "start": "MDCL",
+        "stops": "Bowenpally, RNG"
+    },
+    {
+        "start": "SEC'BAD",
+        "stops": "BATA,LIBERTY,OSMANGUNJ,NAMPALLY,AFZALGUNJ"
+    },
+    {
+        "start": "SEC'BAD",
+        "stops": "PARADISE,AG OFF.,KILWAT,A.BAD"
+    },
+    {
+        "start": "MDCL",
+        "stops": "Bowenpally, Paradise, Tank Bund"
+    },
+    {
+        "start": "D.BOWLI",
+        "stops": "Puranapool,GandhiBhavan,Bible House,Patny"
+    },
+    {
+        "start": "SHALIBANDA",
+        "stops": "Afzalgunj,Gandhibhavan,Bible House,Patny"
+    },
+    {
+        "start": "RISALA BAZAR",
+        "stops": "LALBAZAR, BATA, N.PALLY, AFZ."
+    },
+    {
+        "start": "Sriramnagar",
+        "stops": "Chintal, Balanagar, Moosapet, Koti"
+    },
+    {
+        "start": "FMBS",
+        "stops": "Balkampet, Ameerept,L.pool,A.Gunj,Shalibanda"
+    },
+    {
+        "start": "YOUSUFGUDA",
+        "stops": "Srinagarcolony,Lakdikapool,M.Market,Afzalganj."
+    }
+]

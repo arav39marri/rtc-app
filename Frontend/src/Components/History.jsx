@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import Ticket from './Createuser';
 
 const History = () => {
+
+  const backendUrl = process.env.REACT_APP_URL;
+
   const [data, setData] = useState([]);
   const [selectedTicket, setSelectedTicket] = useState(null); // State for selected ticket details
   const navigate = useNavigate();
@@ -22,7 +25,7 @@ const History = () => {
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('user'));
     // console.log(useremail) ;
-    axios.post("http://localhost:2000/history",{
+    axios.post(`${backendUrl}`+'/history',{
       useremail
     })
       .then((res) => {

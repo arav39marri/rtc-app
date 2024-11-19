@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 const Notification = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+
+  const backendUrl = process.env.REACT_APP_URL;
   
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -21,7 +23,7 @@ const Notification = () => {
 
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('user'));
-      axios.post("http://localhost:2000/notification",{
+      axios.post(`${backendUrl}`+'/notification',{
         useremail
       })
           .then((res) => {
