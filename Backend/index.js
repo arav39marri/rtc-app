@@ -2,7 +2,8 @@ const express = require('express');
 const app = express() ;
 const cors = require('cors');
 const model = require('./model');
-
+require('dotenv').config();
+const port = process.env.PORT || 2000;
 
 app.use(cors());
 app.use(express.json());
@@ -121,6 +122,6 @@ app.post('/notification', async (req, res) => {
 
 
 
-app.listen(2000, ()=>{
-    console.log("server started at port : 2000");
+app.listen(port, ()=>{
+    console.log(`server started at port : ${port}`);
 })
