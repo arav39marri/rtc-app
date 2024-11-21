@@ -1,3 +1,4 @@
+const { Cashfree } = require("cashfree-pg");
 const express = require('express');
 const app = express() ;
 const cors = require('cors');
@@ -9,9 +10,114 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Cashfree.XClientId = "TEST10352759c8e1abc8e29f595783cc95725301";
+// Cashfree.XClientSecret = "cfsk_ma_test_01924e7e9f747742ec1bef99f6eb18d9_076fcb6b";
+// Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
+
+
+
+Cashfree.XClientId = "801615ef25f0fa1808e8e99b01516108";
+Cashfree.XClientSecret = "cfsk_ma_prod_d826afdacbe61d4bb42f55eaa5bec796_a312e6d8";
+Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+
+
+
 app.get('/' , (req,res)=>{
     res.send("hello ");
 })
+
+app.post('/payment', (req, res) => {
+    // console.log("Generating order ID");
+
+    // Generate a unique order_id using timestamp and a random component
+    // const orderId = "devstudio_" + Date.now() + "_" + Math.floor(Math.random() * 10000); // Unique order ID
+    
+    // var request = {
+    //     "order_amount": 1.00,
+    //     "order_currency": "INR",
+    //     "order_id": orderId,  // Use the dynamically generated order_id
+    //     "customer_details": {
+    //         "customer_id": "devstudio_user",
+    //         "customer_phone": "8474090589"
+    //     },
+    //     "order_meta": {
+    //         "return_url": "http://localhost:3000"
+    //     }
+    // };
+
+    // // Cashfree API call to create the order
+    // Cashfree.PGCreateOrder("2023-08-01", request).then((response) => {
+    //     console.log('Order created successfully:', response.data);
+
+    //     // Log the payment session ID for debugging purposes
+    //     console.log("-----------------");
+    //     console.log(`Payment session ID: ${response.data.payment_session_id}`);
+    //     console.log("-----------------");
+
+    //     // Send the payment session ID to frontend
+    //     res.json({
+    //         success: true,
+    //         payment_session_id: response.data.payment_session_id,  // Return the payment_session_id
+    //     });
+    // }).catch((error) => {
+    //     console.error('Error:', error.response?.data?.message || error.message);
+
+    //     // Handle the error case
+    //     res.json({
+    //         success: false,
+    //         error: error.response?.data?.message || error.message,  // Return the error message
+    //     });
+    // });
+   
+    
+        // console.log("Generating order ID");
+    
+        // Generate a unique order_id using timestamp and a random component
+        const orderId = "devstudio_" + Date.now() + "_" + Math.floor(Math.random() * 10000); // Unique order ID
+        
+        // Prepare request data
+        var request = {
+            "order_amount": 1.00,
+            "order_currency": "INR",
+            "order_id": orderId,  // Use the dynamically generated order_id
+            "customer_details": {
+                "customer_id": "devstudio_user",
+                "customer_phone": "6281250586" // Customer phone number
+            },
+            "order_meta": {
+                "return_url": "https://msrtc.vercel.app/Home" // Dynamic return URL with the order_id
+            }
+        };
+    
+        // Cashfree API call to create the order with the correct version
+        Cashfree.PGCreateOrder("2023-08-01", request).then((response) => {  // Use valid version here
+            // console.log('Order created successfully:', response.data);
+    
+            // Send the order details back to frontend, including the payment session ID
+            res.json({
+                success: true,
+                payment_session_id: response.data.payment_session_id,  // Use the payment session ID from Cashfree API response
+            });
+        }).catch((error) => {
+            console.error('Error:', error.response?.data?.message || error.message);
+    
+            // Handle the error case and send error response
+            res.json({
+                success: false,
+                error: error.response?.data?.message || error.message,  // Return the error message
+            });
+        });
+    });
+
+
+
+
+
+
+
+// const userRoutes = require('./Routes/payment.js');
+// app.use('/payment', userRoutes);
+
 
 
 app.post('/search', async (req, res) => {
@@ -37,15 +143,18 @@ app.post('/search', async (req, res) => {
 });
 
 app.put('/createticket', async (req, res) => {
-    const { name, destination, departure, passengers, date, time } = req.body;
-
-
+    const { name, uname, destination, departure, passengers, date, time } = req.body;
+//   console.log(name , "emai ");        
+//   console.log(uname, "usrnma");      
+//   console.log(destination, "dsesf"); 
+   
     try {
         const user = await model.findOne({ email: name });
         if (!user) {
             return res.status(404).send({ message: "User not found." });
         }
         const ticket = {
+            uname,
             destination,
             departure,
             passengers,
@@ -91,7 +200,7 @@ app.post('/create', async (req, res) => {
 
 app.post('/history', async (req, res) => {
     const {useremail} = req.body ;
-    console.log(useremail);
+    // console.log(useremail);
     try {
         const user = await model.findOne({ email: useremail });
         if (!user) {
@@ -122,6 +231,6 @@ app.post('/notification', async (req, res) => {
 
 
 
-app.listen(port, ()=>{
+app.listen(2000, ()=>{
     console.log(`server started at port : ${port}`);
 })

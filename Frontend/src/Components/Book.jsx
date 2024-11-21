@@ -1,89 +1,120 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import data from "./data.json"; // Import your JSON data for locations
+import Try from "./Try";
+import Busstops from "./Busstops"; // Import Bus stops
+import data from './data.json' // bus data and prices are imported 
+import Test from './Test'
 
 export default function Book() {
   const [Firstname, setFirstName] = useState("");
   const [Secondname, setSecondName] = useState("");
   const [departur, setdeparture] = useState("");
   const [destinatin, setDestination] = useState("");
-  const [passenger, setPass] = useState("");
-  const [dat, setdate] = useState("");
-  const [tim, setTime] = useState("");
+  const [passenger, setPass] = useState(1);
   const [filteredDepartures, setFilteredDepartures] = useState([]);
   const [filteredDestinations, setFilteredDestinations] = useState([]);
+  const [BookLoad, setLoad] = useState(false);
   const navigate = useNavigate();
-  const backendUrl = 'https://rtc-app-bayg.onrender.com';
-  const [in1,setin1] = useState(true) ;
-  const [in2,setin2] = useState(true) ;
+  const [busFound, setBusFound] = useState(false);
+  const [busFare, setBusFare] = useState(null);
+  const [busfound, setbusfound] = useState("");
 
-  // Prepare locations from the data.json
-  const allLocations = data.map(route => ({
-    start: route.start,
-    stops: route.stops.split(", ").map(stop => stop.trim()),
-  }));
 
-  useEffect(() => {
-    // Filter departure locations based on user input
-    console.log('Backend URL:', backendUrl);
-    setin1(true);
-    setin2(true);
-    if (departur) {
-      const filteredStarts = allLocations.filter(route =>
-        route.start.toLowerCase().includes(departur.toLowerCase())
+  const busStops = Busstops; // Assume Busstops exports an array of bus stops
+
+  // Handle dynamic suggestions for departure
+  const handleDepartureChange = (e) => {
+    const value = e.target.value;
+    setdeparture(value);
+    if (value) {
+      setFilteredDepartures(
+        busStops.filter((stop) =>
+          stop.toLowerCase().includes(value.toLowerCase())
+        )
       );
-      setFilteredDepartures(filteredStarts.map(route => route.start));
     } else {
       setFilteredDepartures([]);
-      setin1(false);
     }
+  };
 
-    // Filter destination locations based on user input
-    if (destinatin) {
-      const allStops = allLocations.flatMap(route => route.stops);
-      const filteredStops = [...new Set(allStops)].filter(stop =>
-        stop.toLowerCase().includes(destinatin.toLowerCase())
+  // Handle dynamic suggestions for destination
+  const handleDestinationChange = (e) => {
+    const value = e.target.value;
+    setDestination(value);
+    if (value) {
+      setFilteredDestinations(
+        busStops.filter((stop) =>
+          stop.toLowerCase().includes(value.toLowerCase())
+        )
       );
-      setFilteredDestinations(filteredStops);
     } else {
       setFilteredDestinations([]);
-      setin2(false) ;
     }
-  }, [departur, destinatin]);
-
-  const handleDepartureSelect = (selectedDeparture) => {
-    setdeparture(selectedDeparture);
-    setFilteredDepartures([]); // Hide suggestions after selection
   };
 
-  const handleDestinationSelect = (selectedDestination) => {
-    setDestination(selectedDestination);
-    setFilteredDestinations([]); // Hide suggestions after selection
+  const handleDepartureSelect = (stop) => {
+    setdeparture(stop);
+    setFilteredDepartures([]);
   };
 
-  const submit = async (e) => {
+  const handleDestinationSelect = (stop) => {
+    setDestination(stop);
+    setFilteredDestinations([]);
+  };
+
+
+  const searchBus = () => {
+    const buses = data[departur] || [];
+    const destinationBus = buses.find(
+      (bus) => bus.destination.toLowerCase() === destinatin.toLowerCase()
+    );
+  
+    if (destinationBus) {
+      setBusFound(true);
+      setBusFare(destinationBus.price);
+      setbusfound("Bus found! Fare: ")
+    } else {
+      setBusFound(false);
+      setBusFare(null);
+      setbusfound("bus not found");
+    }
+  };
+  
+  const submit = async (e) =>{
+    console.log("want to submit ");
+  }
+
+  const abc = async (e) => {
+    setLoad(true);
     e.preventDefault();
-    const username = JSON.parse(localStorage.getItem('user'));
+    const username = JSON.parse(localStorage.getItem("user"));
     const currentDate = new Date();
-    const dt = `${String(currentDate.getDate()).padStart(2, '0')}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${currentDate.getFullYear()}`;
-    const tme = `${String(currentDate.getHours()).padStart(2, '0')}:${String(currentDate.getMinutes()).padStart(2, '0')}:${String(currentDate.getSeconds()).padStart(2, '0')}`;
+    const dt = `${String(currentDate.getDate()).padStart(2, "0")}-${String(
+      currentDate.getMonth() + 1
+    ).padStart(2, "0")}-${currentDate.getFullYear()}`;
+    const tme = `${String(currentDate.getHours()).padStart(2, "0")}:${String(
+      currentDate.getMinutes()
+    ).padStart(2, "0")}:${String(currentDate.getSeconds()).padStart(2, "0")}`;
 
     try {
-      await axios.put(`${backendUrl}/createticket`, {
+      await axios.put("http://localhost:2000/createticket", {
         name: username,
+        uname: Firstname,
         destination: destinatin,
         departure: departur,
         passengers: passenger,
         date: dt,
         time: tme,
       });
-      navigate('/History');
+      navigate("/History");
     } catch (error) {
       alert("Error booking ticket. Please try again.");
       console.error(error);
+    } finally {
+      setLoad(false);
     }
   };
 
@@ -96,7 +127,10 @@ export default function Book() {
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 sm:w-1/2">
                 <div className="mb-5">
-                  <label htmlFor="fName" className="mb-3 block text-base font-medium text-[#07074D]">
+                  <label
+                    htmlFor="fName"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
+                  >
                     First Name
                   </label>
                   <input
@@ -112,7 +146,10 @@ export default function Book() {
               </div>
               <div className="w-full px-3 sm:w-1/2">
                 <div className="mb-5">
-                  <label htmlFor="lName" className="mb-3 block text-base font-medium text-[#07074D]">
+                  <label
+                    htmlFor="lName"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
+                  >
                     Last Name
                   </label>
                   <input
@@ -128,57 +165,61 @@ export default function Book() {
               </div>
             </div>
             <div className="-mx-3 flex flex-wrap">
-              <div className="w-full px-3 sm:w-1/2">
+              <div className="w-full px-3 sm:w-1/2 relative">
                 <div className="mb-5">
-                  <label htmlFor="fName" className="mb-3 block text-base font-medium text-[#07074D]">
+                  <label
+                    htmlFor="departure"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
+                  >
                     From
                   </label>
                   <input
                     type="text"
-                    name="fName"
-                    id="fName"
-                    placeholder="Enter departure Location"
+                    name="departure"
+                    id="departure"
+                    placeholder="Enter departure location"
                     value={departur}
-                    onChange={(e) => setdeparture(e.target.value)}
-                    required
+                    onChange={handleDepartureChange}
                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
-                  {departur && filteredDepartures.length > 0 && in1 && (
-                    <ul className="mt-2 max-h-40 overflow-y-auto rounded-md border border-[#e0e0e0] bg-white">
-                      {filteredDepartures.map((start, index) => (
+                  {filteredDepartures.length > 0 && (
+                    <ul className="absolute bg-white border border-gray-300 w-full mt-2 rounded-md shadow-lg z-10">
+                      {filteredDepartures.map((stop, index) => (
                         <li
                           key={index}
-                          className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                          onClick={() => handleDepartureSelect(start)}
+                          className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                          onClick={() => handleDepartureSelect(stop)}
                         >
-                          {start}
+                          {stop}
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
               </div>
-              <div className="w-full px-3 sm:w-1/2">
+              <div className="w-full px-3 sm:w-1/2 relative">
                 <div className="mb-5">
-                  <label htmlFor="lName" className="mb-3 block text-base font-medium text-[#07074D]">
+                  <label
+                    htmlFor="destination"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
+                  >
                     To
                   </label>
                   <input
                     type="text"
-                    name="lName"
-                    id="lName"
-                    placeholder="Enter destination Location"
+                    name="destination"
+                    id="destination"
+                    placeholder="Enter destination location"
                     value={destinatin}
-                    onChange={(e) => setDestination(e.target.value)}
-                    required
+                    onChange={handleDestinationChange}
                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
-                  {destinatin && filteredDestinations.length > 0 && in2 && (
-                    <ul className="mt-2 max-h-40 overflow-y-auto rounded-md border border-[#e0e0e0] bg-white">
+                  {filteredDestinations.length > 0 && (
+                    <ul className="absolute bg-white border border-gray-300 w-full mt-2 rounded-md shadow-lg z-10">
                       {filteredDestinations.map((stop, index) => (
                         <li
                           key={index}
-                          className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                          className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                           onClick={() => handleDestinationSelect(stop)}
                         >
                           {stop}
@@ -190,7 +231,10 @@ export default function Book() {
               </div>
             </div>
             <div className="mb-5">
-              <label htmlFor="guest" className="mb-3 block text-base font-medium text-[#07074D]">
+              <label
+                htmlFor="guest"
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
                 No of passengers
               </label>
               <input
@@ -204,14 +248,52 @@ export default function Book() {
                 required
               />
             </div>
-            <div>
-              <button type="submit" className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                Book Ticket
+            {/* <div className="flex gap-3 ">
+              <button
+                type="submit"
+                disabled={BookLoad}
+                className="hover:shadow-form rounded-md bg-blue-700 py-3 px-8 text-center text-base font-semibold text-white outline-none"
+              >
+                {BookLoad ? "Searching..." : "Search Buses"}
               </button>
-            </div>
+              <div>
+                <p>this is to show buses found or not</p>
+              </div>
+            </div> */}
+            <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={searchBus}
+                  className="hover:shadow-form rounded-md bg-blue-700 py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                >
+                  {BookLoad ? "Searching..." : "Search Buses"}
+                </button>
+                <div>
+                  {busFound ? (
+                    <p className="text-green-500">{busfound} {busFare*passenger}</p>
+                  ) : (
+                    <p className="text-red-500">{busfound}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-2">
+                {/* <button
+                  type="button"
+                  disabled={!busFound}
+                  className={`hover:shadow-form rounded-md py-3 px-8 text-center text-base font-semibold text-white outline-none ${
+                    busFound ? "bg-blue-700" : "bg-gray-400 cursor-not-allowed"
+                  }`}
+                >
+                  Pay Now
+                </button> */}
+              </div>
+            <Test busFound={busFound}  />
+            
           </form>
         </div>
       </div>
+     
       <Footer />
     </div>
   );

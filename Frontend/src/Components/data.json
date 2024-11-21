@@ -1,270 +1,872 @@
-[
-    {
-        "start": "MDCL",
-        "stops": "Bowenpally, RTC X Rds, Koti"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "KOTI,RTC X RDS,BOIGUDA"
-    },
-    {
-        "start": "Dilsukhnagar",
-        "stops": "koti,RTC x Rds,MSRD"
-    },
-    {
-        "start": "FMBS",
-        "stops": "SHALIBANDA,AFZALGUNJ,CLK X RDS,TUKARAMGATE"
-    },
-    {
-        "start": "Dilsukhnagar",
-        "stops": "DSNR,Koti,RTC x Rds,MSRD"
-    },
-    {
-        "start": "IBS",
-        "stops": "KOTI,RTC X RDS,BOIGUDA"
-    },
-    {
-        "start": "JIYAGUDA",
-        "stops": "AFZALGUNJ,KACHIGUDA,RTC X ROADS"
-    },
-    {
-        "start": "KOTI",
-        "stops": "NARAYANGUDA,RTC X RDS,BOIGUDA"
-    },
-    {
-        "start": "NMNGR",
-        "stops": "DSNR,Koti,RTC x Rds,MSRD"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "KOTI,RTC X RDS,PADMARAONAGAR"
-    },
-    {
-        "start": "KOTI",
-        "stops": "RTC X RDS,PADMARAONAGAR, KARKHANA"
-    },
-    {
-        "start": "NGO'S Colony",
-        "stops": "DSNR W.COLLEGE, RTC X RD"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "NARAYANGUDA,RTC X RDS,BOIGUDA"
-    },
-    {
-        "start": "BARKAS",
-        "stops": "CBS,Shankarmutte,RTC\"X\" Rds"
-    },
-    {
-        "start": "JIYAGUDA",
-        "stops": "AFZALGUNJ,KACHIGUDA,RTC X ROADS"
-    },
-    {
-        "start": "UPPUGUDA",
-        "stops": "CBS,Shankarmutte,RTC\"X\" Rds"
-    },
-    {
-        "start": "Madhubancolony",
-        "stops": "Katedhan,Zoo Park,Afzalgunj,RTC x Rds."
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "Koti,Nallakunta,OU,TNK,Nacharram"
-    },
-    {
-        "start": "KOTI",
-        "stops": "TARNAKA,HABSIGUDA,NACHARAM"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "SHANKARMUTT,OUC,TARNAKA"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "CBS, Kachiguda,Tarnaka,Lalapet,Moulali"
-    },
-    {
-        "start": "DAMMAIGUDA",
-        "stops": "ECIL, TARNAKA, KOTI"
-    },
-    {
-        "start": "ECIL'X'RD",
-        "stops": "HBC, TARNAKA, KOTI"
-    },
-    {
-        "start": "KEESARAGUTTA",
-        "stops": "KEESARA,ECIL,TARNAKA,KOTI"
-    },
-    {
-        "start": "ECIL'X'RD",
-        "stops": "HBC, NACHARAM, TARNAKA"
-    },
-    {
-        "start": "AMBEDKAR NAGAR",
-        "stops": "ECIL, HBC, KOTI"
-    },
-    {
-        "start": "KUSHAIGUDA",
-        "stops": "MOULALI,TARNAKA,KOTI"
-    },
-    {
-        "start": "KLR NAGAR",
-        "stops": "MALLAPUR,NACHARAM,TARNAKA"
-    },
-    {
-        "start": "AS RAO NAGAR",
-        "stops": "RTC COLY,LALAPET,TARNAKA"
-    },
-    {
-        "start": "AFZALGUNJ",
-        "stops": "TARNAKA,HABSIGUDA,NACHARAM"
-    },
-    {
-        "start": "YAPRAL",
-        "stops": "ECIL,HBC,TARNAKA"
-    },
-    {
-        "start": "KOTI",
-        "stops": "NALLAKUNTA,TILAKNAGAR,VIDYANAGAR"
-    },
-    {
-        "start": "VAMPUGUDA",
-        "stops": "ECIL,HBC,TARNAKA"
-    },
-    {
-        "start": "KUSHAIGUDA",
-        "stops": "ECIL,TARNAKA,KCG,C.GHAT"
-    },
-    {
-        "start": "SEC'BAD STN",
-        "stops": "Paradise,RNG,Sectt,Masabtank"
-    },
-    {
-        "start": "MDCL",
-        "stops": "Bowenpally, RNG"
-    },
-    {
-        "start": "BAPU GHAT",
-        "stops": "BAPUGHAT,L HOUSE,MP,M TANK,L POOL, SEC'BAD"
-    },
-    {
-        "start": "TOLI CHOWKI",
-        "stops": "TOLICHOWKI,M TANK, PARADISE,SEC'BAD"
-    },
-    {
-        "start": "GOLKONDA",
-        "stops": "GOLKONDA,L HOUSE,MP,M TANK,L POOL, SEC'BAD"
-    },
-    {
-        "start": "GPRA QUARTERS",
-        "stops": "Gachibowli,MP,L.Pool,BATA"
-    },
-    {
-        "start": "SEC'BAD",
-        "stops": "Bata,Masabtank,SD Hospital"
-    },
-    {
-        "start": "SEC'BAD STN",
-        "stops": "Bata,L.Poo,MP,Langer House"
-    },
-    {
-        "start": "KALIMANDIR",
-        "stops": "KALIMANDIR,L HOUSE,MP,M TANK, SEC'BAD"
-    },
-    {
-        "start": "MEHIDIPATNAM",
-        "stops": "MEHDIPATNAM,B HILLS,BGPT,SEC'BAD,TNK,MALLAPUR"
-    },
-    {
-        "start": "SEC'BAD",
-        "stops": "Bata,Masabtank,Mallepally"
-    },
-    {
-        "start": "MOTHIDARWAJA",
-        "stops": "DILAWARSHAH,MDLINES,M TANK, PARADISE,SEC'BAD"
-    },
-    {
-        "start": "PUPPAL GUDA",
-        "stops": "PUPAL GUDA,MP,M TANK, SEC'BAD"
-    },
-    {
-        "start": "RISALA BAZAR",
-        "stops": "LALBAZAR, BATA, M.TANK"
-    },
-    {
-        "start": "TALLAGADDA",
-        "stops": "TALLAGADDA ,MP,M TANK, L POOL,SEC'BAD"
-    },
-    {
-        "start": "RISALA BAZAR",
-        "stops": "Lalbazar,Bata,Sectt.,MP"
-    },
-    {
-        "start": "MEHIDIPATNAM",
-        "stops": "MP,M TANK, PARADISE,SEC'BAD"
-    },
-    {
-        "start": "GP COLONY",
-        "stops": "MSRD,RTC X Road,B.L.Pally,N.Guda,L.Pool"
-    },
-    {
-        "start": "ECIL'X'RD",
-        "stops": "HBC,TARNAKA,H.NAGAR"
-    },
-    {
-        "start": "RAMNAGAR",
-        "stops": "B.L.pally,N.Guda,Liberty,L.Pool,Masabtank"
-    },
-    {
-        "start": "VST",
-        "stops": "VST,Nallakunta,N.Guda,L.Pool,MP,Nanalnagr"
-    },
-    {
-        "start": "MDCL",
-        "stops": "Bowenpally, MT Bund, Koti"
-    },
-    {
-        "start": "SEC'BAD STN",
-        "stops": "Paradise,RNG,Liberty,Koti,AFG"
-    },
-    {
-        "start": "MDCL",
-        "stops": "Bowenpally, RNG"
-    },
-    {
-        "start": "SEC'BAD",
-        "stops": "BATA,LIBERTY,OSMANGUNJ,NAMPALLY,AFZALGUNJ"
-    },
-    {
-        "start": "SEC'BAD",
-        "stops": "PARADISE,AG OFF.,KILWAT,A.BAD"
-    },
-    {
-        "start": "MDCL",
-        "stops": "Bowenpally, Paradise, Tank Bund"
-    },
-    {
-        "start": "D.BOWLI",
-        "stops": "Puranapool,GandhiBhavan,Bible House,Patny"
-    },
-    {
-        "start": "SHALIBANDA",
-        "stops": "Afzalgunj,Gandhibhavan,Bible House,Patny"
-    },
-    {
-        "start": "RISALA BAZAR",
-        "stops": "LALBAZAR, BATA, N.PALLY, AFZ."
-    },
-    {
-        "start": "Sriramnagar",
-        "stops": "Chintal, Balanagar, Moosapet, Koti"
-    },
-    {
-        "start": "FMBS",
-        "stops": "Balkampet, Ameerept,L.pool,A.Gunj,Shalibanda"
-    },
-    {
-        "start": "YOUSUFGUDA",
-        "stops": "Srinagarcolony,Lakdikapool,M.Market,Afzalganj."
-    }
-]
+{
+    "Medchal Bus Stop": [
+        {
+            "destination": "Dabilpur",
+            "price": 5
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 10
+        },
+        {
+            "destination": "CMR college",
+            "price": 15
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 20
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 35
+        },
+        {
+            "destination": "Chintal",
+            "price": 35
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Dabilpur": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 5
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 10
+        },
+        {
+            "destination": "CMR college",
+            "price": 15
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 25
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 35
+        },
+        {
+            "destination": "Chintal",
+            "price": 35
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Medchal Checkpost": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 10
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "CMR college",
+            "price": 10
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 25
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 35
+        },
+        {
+            "destination": "Chintal",
+            "price": 35
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "CMR college": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 15
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 10
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 15
+        },
+        {
+            "destination": "Kompally",
+            "price": 20
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 35
+        },
+        {
+            "destination": "Chintal",
+            "price": 35
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Gundlapochampally": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 20
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 20
+        },
+        {
+            "destination": "CMR college",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 10
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 20
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 30
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Kompally": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 20
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 20
+        },
+        {
+            "destination": "CMR college",
+            "price": 20
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 10
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 20
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 30
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Suchitra Junction": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 30
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 30
+        },
+        {
+            "destination": "CMR college",
+            "price": 300
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 10
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 20
+        },
+        {
+            "destination": "Chintal",
+           "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 35
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 35
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+           "price": 35
+        },
+        {
+            "destination": "Patny",
+            "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Jeedimetla": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 30
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 30
+        },
+        {
+            "destination": "CMR college",
+            "price": 30
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 10
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 10
+        },
+        {
+            "destination": "Chintal",
+            "price": 20
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 30
+        },
+        {
+            "destination": "Tadbund Junction",
+          "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+           "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Chintal": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 30
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 30
+        },
+        {
+            "destination": "CMR college",
+            "price": 30
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 20
+        },
+        {
+            "destination": "Kompally",
+            "price": 10
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 10
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 20
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 30
+        },
+        {
+            "destination": "Tadbund Junction",
+          "price": 35
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 35
+        },
+        {
+            "destination": "Patny",
+           "price": 35
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 35
+        }
+    ],
+    "Balanagar": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 5
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 15
+        },
+        {
+            "destination": "CMR college",
+            "price": 20
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 25
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 35
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 40
+        },
+        {
+            "destination": "Chintal",
+            "price": 45
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 50
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 55
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 60
+        },
+        {
+            "destination": "Patny",
+            "price": 65
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 70
+        }
+    ],
+    "Bowenpally": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 35
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 35
+        },
+        {
+            "destination": "CMR college",
+            "price": 35
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 30
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 20
+        },
+        {
+            "destination": "Patny",
+            "price": 20
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 20
+        }
+    ],
+    "Tadbund Junction": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 35
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 35
+        },
+        {
+            "destination": "CMR college",
+            "price": 35
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 30
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 20
+        },
+        {
+            "destination": "Patny",
+            "price": 20
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 20
+        }
+    ],
+    "Paradise Circle": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 35
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 35
+        },
+        {
+            "destination": "CMR college",
+            "price": 35
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 30
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Patny",
+            "price": 20
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 20
+        }
+    ],
+    "Patny": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 35
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 35
+        },
+        {
+            "destination": "CMR college",
+            "price": 35
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 30
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 30
+        },
+        {
+            "destination": "Chintal",
+            "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 25
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 20
+        },
+        {
+            "destination": "Secunderabad Bus Station",
+            "price": 20
+        }
+    ],
+    "Secunderabad Bus Station": [
+        {
+            "destination": "Medchal Bus Stop",
+            "price": 35
+        },
+        {
+            "destination": "Dabilpur",
+            "price": 10
+        },
+        {
+            "destination": "Medchal Checkpost",
+            "price": 35
+        },
+        {
+            "destination": "CMR college",
+            "price": 35
+        },
+        {
+            "destination": "Gundlapochampally",
+            "price": 35
+        },
+        {
+            "destination": "Kompally",
+            "price": 30
+        },
+        {
+            "destination": "Suchitra Junction",
+            "price": 30
+        },
+        {
+            "destination": "Jeedimetla",
+            "price": 25
+        },
+        {
+            "destination": "Chintal",
+            "price": 25
+        },
+        {
+            "destination": "Balanagar",
+            "price": 20
+        },
+        {
+            "destination": "Bowenpally",
+            "price": 25
+        },
+        {
+            "destination": "Tadbund Junction",
+            "price": 15
+        },
+        {
+            "destination": "Paradise Circle",
+            "price": 10
+        },
+        {
+            "destination": "Patny",
+            "price": 10
+        }
+    ]
+}

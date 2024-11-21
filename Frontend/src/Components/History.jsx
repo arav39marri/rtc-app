@@ -4,6 +4,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { useNavigate } from "react-router-dom";
 import Ticket from './Createuser';
+import animation from './animation.json'
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const History = () => {
 
@@ -12,6 +14,7 @@ const History = () => {
   const [data, setData] = useState([]);
   const [selectedTicket, setSelectedTicket] = useState(null); // State for selected ticket details
   const navigate = useNavigate();
+  const [animate , setAnimate] = useState(true) ;
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -25,17 +28,33 @@ const History = () => {
   useEffect(() => {
     const useremail = JSON.parse(localStorage.getItem('user'));
     // console.log(useremail) ;
-    console.log('Backend URL:', backendUrl);
-    axios.post(`${backendUrl}/history`,{
-      useremail
+     setAnimate(true) ;
+    // console.log('Backend URL:', backendUrl);
+    try{
+    // axios.post(`${backendUrl}/history`,{
+    //   useremail
+    // })
+    axios.post('http://localhost:2000/history',{
+      useremail 
     })
       .then((res) => {
-        console.log("API response:", res.data); 
+        // console.log("API response:", res.data); 
         setData(res.data);
+        setAnimate(false)
       })
       .catch((error) => {
         console.error("Error fetching history:", error);
-      });
+      })
+    }
+    catch(error){
+
+
+    }
+    finally{
+      setAnimate(true) ;
+    }
+    
+      
   }, []);
 
   const formatDate = (timestamp) => {
@@ -54,6 +73,7 @@ const History = () => {
   return (
     <div className='h-screen' >
       <Navbar />
+      {animate ? (<Player src={animation} loop className="player"  autoplay style={{ height: '300px', width: '300px' }}  />):(
       <div className="flex flex-col gap-6 w-full ">
         {data.map((element, index) => (
           <div key={index} className="flex gap-5 p-5 justify-center items-center">
@@ -63,7 +83,7 @@ const History = () => {
               <span
                 className="text-blue-600 hover:underline dark:text-blue-500 cursor-pointer"
                 onClick={() => handleDetailsClick({
-                  name: element.name,
+                  uname: element.uname,
                   bookedAt: formatDate(element.bookedAt),
                   departure: element.departure,
                   destination: element.destination,
@@ -89,7 +109,7 @@ const History = () => {
                 ×
               </button>
               <Ticket
-                
+                uname={selectedTicket.uname}
                 bookedAt={selectedTicket.bookedAt}
                 departure={selectedTicket.departure}
                 destination={selectedTicket.destination}
@@ -101,6 +121,7 @@ const History = () => {
           </div>
         )}
       </div>
+)}
       <Footer />
     </div>
   );

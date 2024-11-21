@@ -11,8 +11,8 @@ const Home = () => {
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     const parsedUser = storedUser ? JSON.parse(storedUser) : null;
-     console.log(parsedUser);
-     console.log(localStorage);
+    //  console.log(parsedUser);
+    //  console.log(localStorage);
     if (!parsedUser) {
         navigate('/'); 
     }
