@@ -16,9 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-Cashfree.XClientId = "801615ef25f0fa1808e8e99b01516108";
-Cashfree.XClientSecret = "cfsk_ma_prod_d826afdacbe61d4bb42f55eaa5bec796_a312e6d8";
+Cashfree.XClientId = process.env.APP_ID;
+Cashfree.XClientSecret = process.env.SECRET_KEY;
 Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+// console.log(Cashfree.XClientSecret)
 
 
 
@@ -85,7 +86,7 @@ app.post('/payment', (req, res) => {
                 "customer_phone": "6281250586" // Customer phone number
             },
             "order_meta": {
-                "return_url": "https://msrtc.vercel.app/Home" // Dynamic return URL with the order_id
+                "return_url": "https://msrtc.vercel.app/Book" // Dynamic return URL with the order_id
             }
         };
     
