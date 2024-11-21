@@ -14,7 +14,8 @@ Cashfree.XClientId = process.env.APP_ID;
 Cashfree.XClientSecret = process.env.SECRET_KEY;
 Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
-
+// console.log(Cashfree.XClientId)
+// console.log(Cashfree.XClientSecret)
 
 
 app.get('/' , (req,res)=>{
@@ -86,7 +87,7 @@ app.post('/payment', (req, res) => {
     
         // Cashfree API call to create the order with the correct version
         Cashfree.PGCreateOrder("2023-08-01", request).then((response) => {  // Use valid version here
-            // console.log('Order created successfully:', response.data);
+            console.log('Order created successfully:', response.data);
     
             // Send the order details back to frontend, including the payment session ID
             res.json({

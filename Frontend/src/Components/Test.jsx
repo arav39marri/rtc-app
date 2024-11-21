@@ -9,10 +9,10 @@ function Checkout({busFound}) {
     const createOrder = async () => {
         try {
             // Send a POST request to generate a new order token
-            const response = await axios.post("http://localhost:2000/payment");
+            const response = await axios.post("https://rtc-app-bayg.onrender.com/payment");
             const data = response.data;
-            // console.log(data) ;
-            // console.log(response.payment_session_id) ;
+            console.log(data) ;
+            // console.log(`${response.payment_session_id}`) ;
 
             if (data.success) {
                 setOrderToken(data.payment_session_id); 
