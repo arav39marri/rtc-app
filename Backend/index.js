@@ -10,12 +10,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Cashfree.XClientId = "TEST10352759c8e1abc8e29f595783cc95725301";
-// Cashfree.XClientSecret = "cfsk_ma_test_01924e7e9f747742ec1bef99f6eb18d9_076fcb6b";
-// Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
-
-
-
 Cashfree.XClientId = process.env.APP_ID;
 Cashfree.XClientSecret = process.env.SECRET_KEY;
 Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
