@@ -7,9 +7,6 @@
 // router.use(express.raw({ type: 'application/json' }));  // Middleware to handle raw body for webhook verification
 
 // // Set Cashfree credentials and environment
-// Cashfree.XClientId = "TEST10352759c8e1abc8e29f595783cc95725301";
-// Cashfree.XClientSecret = "cfsk_ma_test_01924e7e9f747742ec1bef99f6eb18d9_076fcb6b";
-// Cashfree.XEnvironment = Cashfree.Environment.TEST; // or PRODUCTION
 
 // router.post('/', (req, res) => {
 //     console.log("Received request to create order");
