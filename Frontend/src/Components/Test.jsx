@@ -15,7 +15,7 @@ function Checkout({busFound}) {
             // console.log(`${response.payment_session_id}`) ;
 
             if (data.success) {
-                setOrderToken(data.payment_session_id); 
+                setOrderToken(`${data.payment_session_id}`); 
                  // Set the order token state
                  console.log("success ");
                  console.log(orderToken)
