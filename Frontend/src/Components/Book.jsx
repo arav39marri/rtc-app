@@ -100,7 +100,7 @@ export default function Book() {
     ).padStart(2, "0")}:${String(currentDate.getSeconds()).padStart(2, "0")}`;
 
     try {
-      await axios.put("http://localhost:2000/createticket", {
+      await axios.put("https://rtc-app-bayg.onrender.com/createticket", {
         name: username,
         uname: Firstname,
         destination: destinatin,

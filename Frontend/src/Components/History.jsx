@@ -34,7 +34,7 @@ const History = () => {
     // axios.post(`${backendUrl}/history`,{
     //   useremail
     // })
-    axios.post('http://localhost:2000/history',{
+    axios.post('https://rtc-app-bayg.onrender.com/history',{
       useremail 
     })
       .then((res) => {
