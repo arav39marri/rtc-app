@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 Cashfree.XClientId = process.env.APP_ID;
 Cashfree.XClientSecret = process.env.SECRET_KEY;
 Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
-// console.log(Cashfree.XClientSecret)
+
 
 
 
