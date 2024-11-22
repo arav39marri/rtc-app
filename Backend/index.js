@@ -232,6 +232,6 @@ app.post('/notification', async (req, res) => {
 
 
 
-app.listen(2000, ()=>{
+app.listen(port, ()=>{
     console.log(`server started at port : ${port}`);
 })
