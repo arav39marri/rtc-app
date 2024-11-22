@@ -20,10 +20,12 @@ export default function Book() {
   const navigate = useNavigate();
   const [busFound, setBusFound] = useState(false);
   const [busFare, setBusFare] = useState(null);
+  const [Fare , SetFare] = useState (10) ;
+
   const [busfound, setbusfound] = useState("");
 
 
-  const busStops = Busstops; // Assume Busstops exports an array of bus stops
+  const busStops = Busstops; 
 
   // Handle dynamic suggestions for departure
   const handleDepartureChange = (e) => {
@@ -75,6 +77,8 @@ export default function Book() {
     if (destinationBus) {
       setBusFound(true);
       setBusFare(destinationBus.price);
+      const calculatedFare = destinationBus.price * passenger;
+      SetFare(calculatedFare);
       setbusfound("Bus found! Fare: ")
     } else {
       setBusFound(false);
@@ -242,7 +246,7 @@ export default function Book() {
                 name="guest"
                 id="guest"
                 placeholder="1"
-                min="0"
+                min="1"
                 className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 onChange={(e) => setPass(e.target.value)}
                 required
@@ -288,7 +292,18 @@ export default function Book() {
                   Pay Now
                 </button> */}
               </div>
-            <Test busFound={busFound}  />
+            <Test 
+            busFound={busFound}
+               name= {""}
+               uname= {Firstname}
+               destination= {destinatin}
+               departure= {departur}
+               passengers= {passenger}
+               Fare = {busFare*passenger}
+               date= {0}
+               time={0}
+            
+            />
             
           </form>
         </div>

@@ -38,7 +38,7 @@ const History = () => {
       useremail 
     })
       .then((res) => {
-        // console.log("API response:", res.data); 
+        console.log("API response:", res.data); 
         setData(res.data);
         setAnimate(false)
       })
@@ -63,6 +63,7 @@ const History = () => {
   };
 
   const handleDetailsClick = (ticket) => {
+    console.log(ticket) ;
     setSelectedTicket(ticket); // Set the selected ticket details
   };
 
@@ -88,6 +89,7 @@ const History = () => {
                   departure: element.departure,
                   destination: element.destination,
                   passengers: element.passengers,
+                  Fare : element.Fare,
                   date: element.date,
                   time: element.time,
                 })}
@@ -114,6 +116,7 @@ const History = () => {
                 departure={selectedTicket.departure}
                 destination={selectedTicket.destination}
                 passengers={selectedTicket.passengers}
+                Fare = {selectedTicket.Fare}
                 date={selectedTicket.date}
                 time={selectedTicket.time}
               />

@@ -29,10 +29,10 @@ const Navbar = () => {
           <div className="flex flex-shrink-0 items-center justify-center">
             <img
                src="https://play-lh.googleusercontent.com/KvtOgdUQBAxVYfUe_Y5T86gTrz8dV4USrqmHXlkHyCROkVs4WgAxLN3iGPJwUALA-i4"
-                 alt="TSRTC Logo"
+                 alt="MSRTC Logo"
               className="h-12 w-auto"
             />
-            <p className='ml-2 text-slate-50 text-xl font-semibold '>TSRTC</p>
+            <p className='ml-2 text-slate-50 text-xl font-semibold '>MSRTC</p>
           </div>
           <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-4">

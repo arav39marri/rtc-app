@@ -1,7 +1,8 @@
 import React from "react";
 
-const Ticket = ({ uname, bookedAt, departure, destination, passengers, date, time }) => {
-  // console.log(uname) ;
+const Ticket = ({ uname, bookedAt, departure, destination, passengers,Fare, date, time }) => {
+
+  console.log({Fare}) ;
   return (
 
     <div className="flex items-center justify-center min-w- md:text-lg text-sm overflow-hidden ">
@@ -25,6 +26,9 @@ const Ticket = ({ uname, bookedAt, departure, destination, passengers, date, tim
             </p>
             <p className="md:text-lg sm:text-sm font-bold text-black">
               PASSENGERS: <span className="font-normal">{passengers}</span>
+            </p>
+            <p className="md:text-lg sm:text-sm font-bold text-black">
+              Fare: <span className="font-normal">{Fare}</span>
             </p>
             <div className="mt-8">
               <img
