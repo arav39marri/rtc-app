@@ -3,6 +3,7 @@ const express = require('express');
 const app = express() ;
 const cors = require('cors');
 const model = require('./model');
+const axios = require('axios');
 require('dotenv').config();
 const port = process.env.PORT || 2000;
 
@@ -22,55 +23,57 @@ app.get('/' , (req,res)=>{
     res.send("hello ");
 })
 
+app.post("/fetch", async (req, res) => {
+    const { orderId } = req.body;
+    
+    // if (!orderId) {
+    //     return res.status(400).json({ success: false, error: "Order ID is required" });
+    // }
+
+    try {
+        // Call Cashfree API to fetch payment status
+       
+        
+        const response = await axios.get(
+            `https://api.cashfree.com/pg/orders/${orderId}`,
+            {
+                headers: {
+                    accept: "application/json",
+                    "x-api-version": "2023-08-01",
+                    "x-client-id": Cashfree.XClientId,
+                    "x-client-secret": Cashfree.XClientSecret,
+                },
+            }
+        );
+        // console.log(response.data);
+
+        const getOrderResponse = response.data;
+        let orderStatus;
+         console.log(getOrderResponse);
+        // Check order status directly from the response
+        if (getOrderResponse.order_status === "PAID") {
+            orderStatus = "Success";
+            console.log("Success");
+        } else if (getOrderResponse.order_status === "ACTIVE") {
+            orderStatus = "Pending";
+        } else {
+            orderStatus = "Failure";
+        }
+
+        res.status(200).json({ success: true, orderStatus });
+    } catch (error) {
+        console.error("Error fetching payment status:", error.message);
+        res.status(500).json({ success: false, error: "Failed to fetch payment status" });
+    }
+});
+
+
 app.post('/payment', (req, res) => {
-    // console.log("Generating order ID");
-
-    // Generate a unique order_id using timestamp and a random component
-    // const orderId = "devstudio_" + Date.now() + "_" + Math.floor(Math.random() * 10000); // Unique order ID
     
-    // var request = {
-    //     "order_amount": 1.00,
-    //     "order_currency": "INR",
-    //     "order_id": orderId,  // Use the dynamically generated order_id
-    //     "customer_details": {
-    //         "customer_id": "devstudio_user",
-    //         "customer_phone": "8474090589"
-    //     },
-    //     "order_meta": {
-    //         "return_url": "http://localhost:3000"
-    //     }
-    // };
-
-    // // Cashfree API call to create the order
-    // Cashfree.PGCreateOrder("2023-08-01", request).then((response) => {
-    //     console.log('Order created successfully:', response.data);
-
-    //     // Log the payment session ID for debugging purposes
-    //     console.log("-----------------");
-    //     console.log(`Payment session ID: ${response.data.payment_session_id}`);
-    //     console.log("-----------------");
-
-    //     // Send the payment session ID to frontend
-    //     res.json({
-    //         success: true,
-    //         payment_session_id: response.data.payment_session_id,  // Return the payment_session_id
-    //     });
-    // }).catch((error) => {
-    //     console.error('Error:', error.response?.data?.message || error.message);
-
-    //     // Handle the error case
-    //     res.json({
-    //         success: false,
-    //         error: error.response?.data?.message || error.message,  // Return the error message
-    //     });
-    // });
-   
-    
-        // console.log("Generating order ID");
     
         // Generate a unique order_id using timestamp and a random component
         const orderId = "devstudio_" + Date.now() + "_" + Math.floor(Math.random() * 10000); // Unique order ID
-        
+        console.log(orderId) ;
         // Prepare request data
         var request = {
             "order_amount": 1.00,
@@ -93,6 +96,7 @@ app.post('/payment', (req, res) => {
             res.json({
                 success: true,
                 payment_session_id: response.data.payment_session_id,  // Use the payment session ID from Cashfree API response
+                orderId : orderId ,
             });
         }).catch((error) => {
             console.error('Error:', error.response?.data?.message || error.message);
@@ -139,7 +143,7 @@ app.post('/search', async (req, res) => {
 });
 
 app.put('/createticket', async (req, res) => {
-    const { name, uname, destination, departure, passengers, date, time } = req.body;
+    const { name, uname, destination, departure, passengers,Fare, date, time } = req.body;
 //   console.log(name , "emai ");        
 //   console.log(uname, "usrnma");      
 //   console.log(destination, "dsesf"); 
@@ -154,13 +158,14 @@ app.put('/createticket', async (req, res) => {
             destination,
             departure,
             passengers,
+            Fare,
             date,
             time,
             bookedAt: new Date()
         };
 
         user.tickets.push(ticket);
-        console.log(ticket);
+        // console.log(ticket);
         // Add a notification
         user.notifications.push({
             message: `New ticket booked to ${destination} on ${date} at ${time}.`,
@@ -227,6 +232,6 @@ app.post('/notification', async (req, res) => {
 
 
 
-app.listen(port, ()=>{
+app.listen(2000, ()=>{
     console.log(`server started at port : ${port}`);
 })
