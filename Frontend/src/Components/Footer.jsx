@@ -7,7 +7,7 @@ const Footer = () => {
         
        
         <div>
-          <h2 className="text-lg font-semibold mb-4">TSRTC Bus Booking</h2>
+          <h2 className="text-lg font-semibold mb-4">MSRTC Bus Booking</h2>
           <p className="text-sm">
             Your trusted partner for hassle-free bus travel. We offer affordable and reliable services across the country, with a focus on customer satisfaction and convenience.
           </p>
@@ -26,7 +26,7 @@ const Footer = () => {
         {/* Contact & Social Media */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-          <p className="text-sm mb-2">Email: support@tsrtcbus.com</p>
+          <p className="text-sm mb-2">Email: support@msrtcbus.com</p>
           <p className="text-sm mb-4">Phone: +123 456 7890</p>
 
           <div className="flex space-x-4">
@@ -48,7 +48,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
-        © 2024 TSRTC Bus Booking. All rights reserved.
+        © 2024 MSRTC Bus Booking. All rights reserved.
       </div>
     </footer>
   );
