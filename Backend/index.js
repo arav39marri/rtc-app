@@ -84,7 +84,7 @@ app.post('/payment', (req, res) => {
                 "customer_phone": "6281250586" // Customer phone number
             },
             "order_meta": {
-                "return_url": "https://msrtc.vercel.app/Book" // Dynamic return URL with the order_id
+                "return_url": "https://marggo.vercel.app/Book" // Dynamic return URL with the order_id
             }
         };
     
